@@ -1,18 +1,28 @@
-.pk-page-indicator {
-  font-weight: bold;
-  font-size: 1.1rem;
-  min-width: 60px;
-  text-align: center;
+.PKGalleryCards_card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card .cover-image {
+.PKGalleryCards_card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.card-img-top.cover-image {
   object-fit: cover;
   height: 200px;
   width: 100%;
 }
 
-.card .full-image {
-  height: auto;
-  width: 100%;
+.card-img-top.full-image {
   object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+
+.pk-page-indicator {
+  font-weight: bold;
+  font-size: 1.1rem;
+  min-width: 60px;
+  text-align: center;
 }

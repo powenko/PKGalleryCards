@@ -22,6 +22,7 @@ class PKGalleryCards {
     for (let i = 0; i < pageCount; i++) {
       html += `<div class="carousel-item ${i === 0 ? 'active' : ''}">
         <div class="row g-4">`;
+
       for (let j = 0; j < this.pageSize; j++) {
         const item = this.items[i * this.pageSize + j];
         if (!item) continue;
@@ -32,7 +33,7 @@ class PKGalleryCards {
 
         html += `
           <div class="col-md-4">
-            <div class="card h-100">
+            <div class="card PKGalleryCards_card h-100">
               <div class="position-relative">
                 ${linkStart}
                 <img src="${item.img}" class="${imgClass}" alt="${item.title}">
@@ -45,24 +46,28 @@ class PKGalleryCards {
             </div>
           </div>`;
       }
+
       html += `</div></div>`;
     }
 
-    html += `</div>
-      <div class="text-center mt-4">
-        <div class="d-flex justify-content-center align-items-center gap-3">
-          <button class="btn btn-outline-primary rounded-circle" type="button"
-                  data-bs-target="#${carouselId}" data-bs-slide="prev">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <span id="pk-gallery-page" class="pk-page-indicator">1 / ${pageCount}</span>
-          <button class="btn btn-primary rounded-circle" type="button"
-                  data-bs-target="#${carouselId}" data-bs-slide="next">
-            <i class="fas fa-chevron-right"></i>
-          </button>
+    html += `
+        </div>
+        <div class="text-center mt-4">
+          <div class="d-flex justify-content-center align-items-center gap-3">
+            <button class="btn btn-outline-primary rounded-circle" type="button"
+                    data-bs-target="#${carouselId}" data-bs-slide="prev">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <span id="pk-gallery-page" class="pk-page-indicator">1 / ${pageCount}</span>
+            <button class="btn btn-primary rounded-circle" type="button"
+                    data-bs-target="#${carouselId}" data-bs-slide="next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
         </div>
       </div>
-    </div></section>`;
+    </div>
+  </section>`;
 
     $(this.selector).html(html);
     this.pageCount = pageCount;
