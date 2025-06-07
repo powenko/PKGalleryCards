@@ -1,0 +1,18 @@
+.pk-page-indicator {
+  font-weight: bold;
+  font-size: 1.1rem;
+  min-width: 60px;
+  text-align: center;
+}
+
+.card .cover-image {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
+
+.card .full-image {
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+}
