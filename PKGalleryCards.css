@@ -1,7 +1,6 @@
 .PKGalleryCards_card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .PKGalleryCards_card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
@@ -13,11 +12,18 @@
   height: 200px;
   width: 100%;
 }
-
 .card-img-top.full-image {
   object-fit: contain;
   width: 100%;
   height: auto;
+}
+
+/* 半透明標題樣式 */
+.card-title {
+  background-color: rgba(255, 255, 255, 0.6);
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.3rem;
 }
 
 .pk-page-indicator {
